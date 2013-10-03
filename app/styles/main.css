@@ -1,0 +1,31 @@
+#gameboard {
+	width: 240px;
+	height: 240px;
+	margin: 10px auto 20px;
+}
+
+.cell {
+	font-size: 60px;
+	float: left;
+	text-align: center;
+	width: 78px;
+	height: 78px;
+	text-transform: uppercase;
+	font-family: Garamond;
+}
+
+.row {
+	clear: both;
+
+}
+
+.lt, .mt, .rt, .lc, .mc, .rc {border-bottom: 1px solid #222222;}
+.lt, .lc, .lb {border-right: 1px solid #222222;}
+.rt, .rc, .rb {border-left: 1px solid #222222;}
+
+.x {color: aquamarine;}
+.x:hover {
+	color: #00FA9A;
+}
+
+.o {color: tomato;}
