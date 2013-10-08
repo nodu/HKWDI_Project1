@@ -16,6 +16,7 @@
         <!-- endbuild -->
 </head>
   <body>
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,21 +30,21 @@
     <h1><span class='o'>T</span>ickety<span class='o'>T</span>ackety</h1>
     <div id="gameboard">
       <div class="row">
-        <div class="cell lt "><span class="x">x</span></div>
-        <div class="cell mt o">o</div>
-        <div class="cell rt x">X</div>
+        <div id="cell1" class="cell lt" onclick="handleClick(1)"></div>
+        <div id="cell2" class="cell mt" onclick="handleClick(2)"></div>
+        <div id="cell3" class="cell rt" onclick="handleClick(3)"></div>
       </div>
 
       <div class="row">
-        <div class="cell lc o">O</div>
-        <div class="cell mc x">x</div>
-        <div class="cell rc o">o</div>
+        <div id="cell4" class="cell lc" onclick="handleClick(4)"></div>
+        <div id="cell5" class="cell mc" onclick="handleClick(5)"></div>
+        <div id="cell6" class="cell rc" onclick="handleClick(6)"></div>
       </div>
 
       <div class="row">
-        <div class="cell lb x">X</div>
-        <div class="cell mb o">O</div>
-        <div class="cell rb x">X</div>
+        <div id="cell7" class="cell lb" onclick="handleClick(7)"></div>
+        <div id="cell8" class="cell mb" onclick="handleClick(8)"></div>
+        <div id="cell9" class="cell rb" onclick="handleClick(9)"></div>
       </div>
     </div>
     

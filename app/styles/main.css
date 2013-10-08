@@ -23,9 +23,11 @@
 .lt, .lc, .lb {border-right: 1px solid #222222;}
 .rt, .rc, .rb {border-left: 1px solid #222222;}
 
+.o {color: tomato;}
 .x {color: aquamarine;}
+
 .x:hover {
 	color: #00FA9A;
 }
 
-.o {color: tomato;}
+
