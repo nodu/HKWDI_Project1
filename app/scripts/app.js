@@ -14,6 +14,7 @@ function handleClick(location) {
       restartGame();
     } else {
       swapSymbol();
+
       if (turnNum < 9) {
         selectRandomSquare(currentSymbol);
         if (isWinning(currentSymbol)) {
@@ -24,11 +25,16 @@ function handleClick(location) {
         }
       } else {
         swapSymbol();
+
       }
       
     }
   } else {
     // do nothing
+  }
+  if (turnNum == 9) {
+    alert("No body wins! CAT!");
+    restartGame();
   }
 }
 
