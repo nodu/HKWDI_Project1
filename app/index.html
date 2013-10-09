@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body>
+  <body data-ng-app="tickeyApp">
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -27,33 +27,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header>
-      <h1><span class='o'>T</span>ickety<span class='o'>T</span>ackety</h1>
-    </header>
-    <div id="gameboard">
-      <div class="row">
-        <div id="cell1" class="cell lt" onclick="handleClick(1)"></div>
-        <div id="cell2" class="cell mt" onclick="handleClick(2)"></div>
-        <div id="cell3" class="cell rt" onclick="handleClick(3)"></div>
-      </div>
-
-      <div class="row">
-        <div id="cell4" class="cell lc" onclick="handleClick(4)"></div>
-        <div id="cell5" class="cell mc" onclick="handleClick(5)"></div>
-        <div id="cell6" class="cell rc" onclick="handleClick(6)"></div>
-      </div>
-
-      <div class="row">
-        <div id="cell7" class="cell lb" onclick="handleClick(7)"></div>
-        <div id="cell8" class="cell mb" onclick="handleClick(8)"></div>
-        <div id="cell9" class="cell rb" onclick="handleClick(9)"></div>
-      </div>
-    </div>
-    
+      <header>
+        <h1>Tickey<span class='o'>T</span>ackety</h1>
+      </header>
+    <div data-ng-view></div>
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/angular/angular.js"></script>
         <script src="scripts/app.js"></script>
 
+
+        <script src="scripts/controllers/how_to.js"></script>
+        <script src="scripts/controllers/game_board.js"></script>
         <!-- endbuild -->
 </body>
 </html>

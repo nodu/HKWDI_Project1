@@ -141,3 +141,34 @@ function selectRandomSquare(currentPlayer) {
 
 // Lab 4
 // add Go Back button at gameboard screen
+
+angular.module('tickeyApp', [])
+  .config(function ($routeProvider){
+    $routeProvider
+      .when('/game_board', {
+        templateUrl: 'views/game_board.html',
+        controller: 'GameBoardCtrl'
+      })
+      .when('/how_to', {
+        templateUrl: 'views/how_to.html',
+        controller: 'HowToCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      })
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
