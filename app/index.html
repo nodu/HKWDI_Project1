@@ -32,11 +32,19 @@
       </header>
     <div data-ng-view></div>
 
+    <p>Is How To Page: {{is_how_to_page}}</p>
+
+    <a data-ng-hide="is_how_to_page" href="#/how_to">How To</a>
+    <a href="#/game_board">Play Now!</a>
+    <a href="#/">Home</a>
+
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="scripts/app.js"></script>
 
 
+        <script src="scripts/controllers/indexCtrl.js"></script>
         <script src="scripts/controllers/how_to.js"></script>
         <script src="scripts/controllers/game_board.js"></script>
         <!-- endbuild -->
