@@ -154,8 +154,8 @@ angular.module('tickeyApp', [])
         controller: 'HowToCtrl'
       })
       .when('/', {
-        templateUrl: 'views/index.html',
-        controller: 'indexCtrl'
+        templateUrl: 'views/main.html',
+        controller: 'mainCtrl'
       })
       .otherwise({
         redirectTo: '/'
