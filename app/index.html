@@ -32,21 +32,31 @@
       </header>
     <div data-ng-view></div>
 
-    <p>Is How To Page: {{is_how_to_page}}</p>
+    <a data-ng-show="currentPage == 'how_to'" href="#/how_to">How To</a>
+    <a data-ng-show="currentPage == 'game_board'" href="#/game_board">Play Now</a>
+    <a data-ng-show="currentPage == 'home'" href="#/">Home</a>
 
-    <a data-ng-hide="is_how_to_page" href="#/how_to">How To</a>
-    <a href="#/game_board">Play Now!</a>
-    <a href="#/">Home</a>
+    <a data-ng-show="cells[0]" href="#/">Home</a>
+    <a data-ng-show="getCurrentPage('home')" href="#/">Home</a>
+
+    <!-- <div id="play-btn">
+      <a href="#/game_board" class="large button success">Play now!</a>
+    </div>
+    <div id="play-btn" data-ng-hide="is_how_to_page">
+      <a href="#/how_to" class="large button success">How To</a>
+    </div> -->
 
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-localstorage/angular-local-storage.js"></script>
         <script src="scripts/app.js"></script>
 
 
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/how_to.js"></script>
         <script src="scripts/controllers/game_board.js"></script>
+        <script src="scripts/directives/tickle_me.js"></script>
         <!-- endbuild -->
 </body>
 </html>

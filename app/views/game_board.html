@@ -1,7 +1,7 @@
-<div id="gameboard">
+<div id="gameboard" >
   <div class="row">
-    <div id="cell1" class="cell lt" onclick="handleClick(1)" data-ng-click="click()"></div>
-    <div id="cell2" class="cell mt" onclick="handleClick(2)"></div>
+    <div id="cell1" data="1" data_price="item_price" data_quantity="quantity" class="cell lt {{ cells[0] }}" data-ng-click="clickInAngular($event)">{{ cells[0] }}</div>
+    <div id="cell2" class="cell mt" data-ng-click="clickInAngular(2)">{{ cells[1] }}</div>
     <div id="cell3" class="cell rt" onclick="handleClick(3)"></div>
   </div>
 
@@ -17,3 +17,34 @@
     <div id="cell9" class="cell rb" onclick="handleClick(9)"></div>
   </div>
 </div>
+
+currentSymbol: {{currentSymbol}}
+
+<div>Number of wins: {{numberOfWins}}</div>
+<div>{{minutes}}:{{seconds}}</div>
+
+<button data-ng-click="startTimer()">Start</button>
+<button data-ng-click="stopTimer()">Stop</button>
+<button data-ng-click="reset()">Reset!</button>
+
+
+<a data-ng-show="numberOfWinning == 3" href="#/how_to">How To</a>
+
+<div data-tickle-me="12" data-my-color="green">
+  Div With Out New Directive
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
