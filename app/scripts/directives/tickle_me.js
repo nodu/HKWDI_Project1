@@ -18,7 +18,12 @@ angular.module('tickeyApp')
 					// do something
 					console.log("something has been done")
 
-				})
+				});
+				element.bind("mouseleave", function (){
+					// do something
+					console.log("something has been UNdone")
+
+				});
 
 	    }
 	  }
