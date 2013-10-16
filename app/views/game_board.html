@@ -26,6 +26,15 @@ currentSymbol: {{currentSymbol}}
 <button data-ng-click="startTimer()">Start</button>
 <button data-ng-click="stopTimer()">Stop</button>
 <button data-ng-click="reset()">Reset!</button>
+<button data-ng-click="getName()">Name Please</button>
+<button data-ng-click="addWinToLeaderBoard()">Add Win!</button>
+
+<ul>  
+  <li>LeaderBoard!</li>
+  <li data-ng-repeat="(name, score) in leaderData.name">{{name}}: {{score}}</li>
+
+</ul>
+<!-- {{userName}} -->
 
 
 <a data-ng-show="numberOfWinning == 3" href="#/how_to">How To</a>

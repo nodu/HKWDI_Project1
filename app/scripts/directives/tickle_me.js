@@ -7,7 +7,7 @@ angular.module('tickeyApp')
 	    link: function (scope, element, attrs) {
 	      // <div data-action="">
 	      // console.log(attrs.something);
-	      console.log(attrs.somethingNotExist);
+	      // console.log(attrs.somethingNotExist);
 
 	      // console.log(scope.somethingNotExist);
 

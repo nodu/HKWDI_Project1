@@ -145,7 +145,7 @@
 // Lab 4
 // add Go Back button at gameboard screen
 angular.module('LocalStorageModule').value('prefix', "GameBoardLeaderboard");
-angular.module('tickeyApp', ['LocalStorageModule'])
+angular.module('tickeyApp', ['LocalStorageModule', 'firebase'])
   .config(function ($routeProvider){
     $routeProvider
       .when('/game_board', {
@@ -159,11 +159,132 @@ angular.module('tickeyApp', ['LocalStorageModule'])
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'mainCtrl'
-      })
+      }) 
       .otherwise({
         redirectTo: '/'
       })
-  });
+  })
+  .filter('toDictionaryArray', function () {
+    return function (obj) {
+        if (!(obj instanceof Object)) return obj;
+
+        var arr = [];
+        for (var key in obj) {
+            arr.push({ key: key, value: obj[key] });
+        }
+        return arr;
+    }
+});
+
+// ###########################
+// var url = new Firebase("https://my-firebase.firebaseio.com/auction/" + $scope.auctionId);
+// angularFire(url, $scope, "auction", {}).then(function() {
+//   ref.transaction(function(auction) {
+//     auction.price = ...
+//   });
+// });
+
+
+// ########################### Services
+// angular.module('blog.services', [])
+// .factory('content', ['$http', function($http){
+//   // return{
+//   //  get: function(callback){
+//   //    $http.get("../content/content.json").then(function(dataResponse) {
+//  //             callback(dataResponse);
+//  //      });
+//   //  }
+//   // };
+// }])
+// .factory('Data', function () {
+//   return {query:""}
+// })
+
+
+// ###########################
+// angular.module('blog.controllers', []).
+//   controller('contentController', ["content", "$scope", "$location", "Data", "angularFire", function(content, $scope, $location, Data, angularFire) {
+//     // content.get(function(jsonData){
+//     //  $scope.content = jsonData.data;
+//     // });
+//     window.contentControllerScope = $scope;
+    
+//     $scope.data = Data;
+
+//     // $scope.content = [];
+//     // don't need to create the content arr or the ngModel vars
+//     var url = new Firebase("https://mblog.firebaseio.com/");
+//     angularFire(url, $scope, "content");
+
+//     // apparently i'm using implicit bc of angularFire
+//     $scope.addPost = function(e) {
+//       if (e.keyCode != 13) return;
+      
+//       $scope.content.posts.push({title: $scope.data.newTitle, meat: $scope.data.newMeat, query: $scope.data.query})
+//       $scope.data.newTitle = "";
+//       $scope.data.newMeat = "";
+
+//     };
+//     $scope.del = function(num){
+//       num --
+//       delete $scope.content.posts[num]
+      
+//     }
+
+//   }])
+
+
+
+// ###########################
+// <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+// <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.js"></script>
+
+// angular.module('myapp', ['firebase'])
+
+// Implicit:
+// myapp.controller('MyCtrl', ['$scope', 'angularFire',
+//   function MyCtrl($scope, angularFire) {
+//     ...
+//   }
+// ]);
+
+
+// var ref = new Firebase('https://<my-firebase>.firebaseio.com/items');
+// angularFire(ref, $scope, 'items');
+
+
+
+// $scope.winners ={};
+// $scope.name = function() {
+//   prompt("what's your name stranger")
+// };
+// $scope.wins = 0;
+// $scope.wins[prompt("name")]= 1;
+// $scope.wins[$scope.name]= $scope.wins;
+
+
+// $scope.won = function() {
+//   var newName = prompt "What's your name?"
+//   if name is key in firebase {for winners.name.length (if winners.name[i] == newName)}
+//       record found, adding 1;
+//   new record created
+//   $scope.wins++;
+// }
+
+
+
+// RouteParams:
+// 1. add :routeParamVarName to the when of route providor in app.js
+// 2. inject into controller
+// 3. bind $scope.scopeName =$routeParams.routeParamVarName
+// 4. Use eit.
+
+
+
+
+
+
+
 
 
 

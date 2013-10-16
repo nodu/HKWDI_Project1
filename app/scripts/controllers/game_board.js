@@ -1,7 +1,59 @@
 'use strict';
 
 angular.module('tickeyApp')
- .controller('GameBoardCtrl', function ($scope, $rootScope, $timeout, localStorageService) {
+ .controller('GameBoardCtrl', function ($scope, $rootScope, $timeout, localStorageService, angularFire) {
+    var ref = new Firebase('https://hkwdi1-inst.firebaseio.com/');
+
+    var p = angularFire(ref, $scope, "leaderData");
+
+    // $scope.leaderData = {name:
+    //     {
+    //         SeededValue: 1
+    //     }
+
+    // };
+
+    p.then(function(){
+        console.log("Data Loaded!")
+      });
+
+$scope.getName = function(){
+    $scope.userName = prompt("What's your name?");
+    console.log($scope.userName);
+}
+
+$scope.addWinToLeaderBoard = function(){
+    if ($scope.userName){
+        if ($scope.leaderData.name.hasOwnProperty($scope.userName)){
+            $scope.leaderData.name[$scope.userName]++;
+        } else {
+            $scope.leaderData.name[$scope.userName] = 1;
+        }
+
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $rootScope.currentPage = "game_board";
     $scope.tempName = "abc";
 
